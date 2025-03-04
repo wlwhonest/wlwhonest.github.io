@@ -1,0 +1,20 @@
+- links_category: blog
+  has_thumbnail:  false #是否有预览图（true/false)
+  list:
+      - name:  CSDN
+        link:  https://blog.csdn.net/weixin_73683197
+        description:  csdn算法日记
+        avatar:  https://wlwtypora.oss-cn-shenzhen.aliyuncs.com/mytypora/202412271806044.jpg
+        thumbnail:  https://wlwtypora.oss-cn-shenzhen.aliyuncs.com/mytypora/202501051621744.png #预览图（has_thumbnail 为 true 时才需要）
+ 
+
+- links_category: front-end
+  has_thumbnail:  false #是否有预览图（true/false)
+  list:
+      - name:  掘金
+        link:  https://juejin.cn/my-course
+        description:  前端学习
+        avatar:  https://wlwtypora.oss-cn-shenzhen.aliyuncs.com/mytypora/202501051626974.jpg
+        thumbnail:  #预览图（has_thumbnail 为 true 时才需要）
+ 
+
