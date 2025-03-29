@@ -21,68 +21,7 @@
   <entry>
     <title>ABC-376(a-e)</title>
     <url>/2025/03/29/ABC-376-a-e/</url>
-    <content><![CDATA[<p>@[toc]</p>
-<h2 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h2><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="left">Task Name</th>
-<th align="right">Time Limit</th>
-<th align="right">Memory Limit</th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_a" >A<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_a" >Candy Button<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="right">2 sec</td>
-<td align="right">1024 MB</td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/submit?taskScreenName=abc376_a" >Submit<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-</tr>
-<tr>
-<td align="center"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_b" >B<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_b" >Hands on Ring (Easy)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="right">2 sec</td>
-<td align="right">1024 MB</td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/submit?taskScreenName=abc376_b" >Submit<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-</tr>
-<tr>
-<td align="center"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_c" >C<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_c" >Prepare Another Box<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="right">2 sec</td>
-<td align="right">1024 MB</td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/submit?taskScreenName=abc376_c" >Submit<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-</tr>
-<tr>
-<td align="center"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_d" >D<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_d" >Cycle<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="right">2 sec</td>
-<td align="right">1024 MB</td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/submit?taskScreenName=abc376_d" >Submit<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-</tr>
-<tr>
-<td align="center"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_e" >E<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_e" >Max × Sum<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="right">2 sec</td>
-<td align="right">1024 MB</td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/submit?taskScreenName=abc376_e" >Submit<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-</tr>
-<tr>
-<td align="center"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_f" >F<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_f" >Hands on Ring (Hard)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="right">2 sec</td>
-<td align="right">1024 MB</td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/submit?taskScreenName=abc376_f" >Submit<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-</tr>
-<tr>
-<td align="center"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_g" >G<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/tasks/abc376_g" >Treasure Hunting<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-<td align="right">2 sec</td>
-<td align="right">1024 MB</td>
-<td align="left"><a class="link"   href="https://atcoder.jp/contests/abc376/submit?taskScreenName=abc376_g" >Submit<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></td>
-</tr>
-</tbody></table>
-<h2 id="ABC376"><a href="#ABC376" class="headerlink" title="ABC376"></a>ABC376</h2><blockquote>
+    <content><![CDATA[<h2 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h2><h2 id="ABC376"><a href="#ABC376" class="headerlink" title="ABC376"></a>ABC376</h2><blockquote>
 <p>总结,acde题都能够在赛事大概读通题目,b题没看明白,</p>
 <p>我感觉可能是自己的堆栈以及bfs还不够熟练</p>
 </blockquote>
