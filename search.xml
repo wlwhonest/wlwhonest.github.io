@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ABC-399(a-f)</title>
-    <url>/2025/03/30/ABC-399-a-f/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>ABC-376(a-e)</title>
     <url>/2025/03/29/ABC-376-a-e/</url>
     <content><![CDATA[<h2 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h2><h2 id="ABC376"><a href="#ABC376" class="headerlink" title="ABC376"></a>ABC376</h2><blockquote>
@@ -170,6 +165,162 @@
       <tags>
         <tag>algorithm test</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ABC-399(a-f)</title>
+    <url>/2025/03/31/ABC-399-a-f/</url>
+    <content><![CDATA[<p>[toc]</p>
+<h2 id="ABC-399-a-f"><a href="#ABC-399-a-f" class="headerlink" title="ABC-399(a-f)"></a>ABC-399(a-f)</h2><blockquote>
+<p>总结为掉分，掉得不应该。</p>
+<p>教训是下次多读几遍题目，知道题目要做什么</p>
+</blockquote>
+<h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><blockquote>
+<p>汉明码，直接找不同</p>
+</blockquote>
+<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><blockquote>
+<p>给数字排序，打得有点繁琐了</p>
+</blockquote>
+<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><blockquote>
+<p>并查集，打得也是有点繁琐。</p>
+<p>重要思想：在并查集的一开始，把每一个看成一个连通块，每连接一条边，连通块就减少一个。</p>
+<p>总结：相应的，最后用总点数减去剩下的连通块，就是连的边数</p>
+</blockquote>
+<h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><blockquote>
+<p>一开始直接看样例，没有懂样例的最后一个例子，本人也因没认真读懂题目，一直在找最小换座位次数。</p>
+<p>题意：找到第一次出现和第二次出现都相邻的点对数</p>
+<p>方法：开一个数组维护一个数第一次出现的位置，当数x第一次出现的位置，和x前一位数 y $ (x!&#x3D;y) $ ，当且仅当 x和y第一次出现的位置相差1的时候才有统计答案。特殊地，(1) 如果y前一个位置的是他自己第一次出现的位置，这个时候的不能统计; (2) 如果刚统计完就是自己也不能统计；</p>
+</blockquote>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; pii;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(<span class="number">2</span>*n<span class="number">+2</span>)</span></span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++) cin&gt;&gt;a[i];</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">yi</span><span class="params">(n<span class="number">+1</span>)</span></span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(yi[a[i]]&amp;&amp;yi[a[i<span class="number">-1</span>]]&amp;&amp;a[i<span class="number">-1</span>]!=a[i])&#123;</span><br><span class="line">      <span class="keyword">if</span>(yi[a[i<span class="number">-1</span>]]==i<span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">if</span>(i<span class="number">-1</span>-yi[a[i<span class="number">-1</span>]]==<span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">abs</span>(yi[a[i]]-yi[a[i<span class="number">-1</span>]])==<span class="number">1</span>)&#123;</span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;a[i]&lt;&lt;&#x27; &#x27;&lt;&lt;yi[a[i]]&lt;&lt;&#x27; &#x27;&lt;&lt;yi[a[i-1]]&lt;&lt;endl;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!yi[a[i]])&#123;</span><br><span class="line">      yi[a[i]]=i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="type">int</span> t;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="F"><a href="#F" class="headerlink" title="F"></a>F</h3><blockquote>
+<p>感觉可以用二项式展开定理</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://wlwtypora.oss-cn-shenzhen.aliyuncs.com/wlwtypora/202503300205709.png"
+                      alt="image-20250330020542537"
+                ></p>
+</blockquote>
+<h4 id="知识铺垫"><a href="#知识铺垫" class="headerlink" title="知识铺垫"></a>知识铺垫</h4><ol>
+<li>求组合数</li>
+</ol>
+<blockquote>
+<p>递推法 $O(n^2)$</p>
+<p>递推公式：$ C_{n}^{m} &#x3D; C_{n-1}^{m} + C_{n-1}^{m-1} $</p>
+<p>含义：从n个不同的书中选出m个的方案数，对于第一个数有 <strong>选</strong>或 <strong>不选</strong> 两种决策，如果选，则从剩下的 n-1 个中选 m-1 个，如果不选，则从剩下的 n-1 个中选 m 个</p>
+<p>示意图：$ C[i][j] $ 来自左上和上方</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://wlwtypora.oss-cn-shenzhen.aliyuncs.com/wlwtypora/202503300222548.png"
+                      alt="image-20250330022226324"
+                ></p>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; pii;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">110</span>;</span><br><span class="line"><span class="type">int</span> C[N][N];</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=i;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(j==<span class="number">0</span>) C[i][j]=<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">else</span> C[i][j]=(C[i<span class="number">-1</span>][j]+C[i<span class="number">-1</span>][j<span class="number">-1</span>])%mod;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+
+
+
+<ol start="2">
+<li>快速幂 + 组合公式</li>
+</ol>
+<blockquote>
+<p>板子，用于大幂摸与乘法逆元</p>
+</blockquote>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; pii;</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速幂板子</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qui</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> k,<span class="type">int</span> p)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> res=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(k)&#123;</span><br><span class="line">    <span class="keyword">if</span>(k&amp;<span class="number">1</span>) res=res*a%p;</span><br><span class="line">    k&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    a=a*a%p;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span><span class="number">+10</span>;</span><br><span class="line"><span class="comment">//f[N] 用于存阶乘</span></span><br><span class="line"><span class="comment">//g[N] 用于存阶乘逆元</span></span><br><span class="line"><span class="type">int</span> f[N],g[N];</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> n,m;</span><br><span class="line">  cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line"></span><br><span class="line">  g[<span class="number">0</span>]=f[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    f[i]=f[i<span class="number">-1</span>]*i%mod;</span><br><span class="line">    g[i]=g[i<span class="number">-1</span>]*<span class="built_in">qui</span>(i,mod<span class="number">-2</span>,mod)%mod;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 组合数</span></span><br><span class="line">  cout&lt;&lt; f[n]*g[m]%mod*g[n-m]%mod;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<ol start="3">
+<li>卢卡斯定理</li>
+</ol>
+<blockquote>
+<p>待写…….</p>
+</blockquote>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h4><blockquote>
+<p>题意：</p>
+<p>思路：用组合意义取k次幂，二项式定理。</p>
+<p>类似：<a class="link"   href="https://www.luogu.com.cn/problem/P1758" >NOI2009管道取珠<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+</blockquote>
+<blockquote>
+<p>思路@wjh</p>
+<p>以第i个元素结尾的子数组和</p>
+<p>每增加一个元素会产生什么影响</p>
+</blockquote>
+<blockquote>
+<p>请观察如下式子：</p>
+<p>下列每个元素$[i,j]$ 表示从下标 $i$ 到 $j$ 的子数组的和，以 $n&#x3D;4$ 为例</p>
+<p>$[1,1]$</p>
+<p>$[1,2],[2,2]$</p>
+<p>$[1,3],[2,3],[3,3]$</p>
+<p>$[1,4],[2,4],[3,4],[4,4]$</p>
+</blockquote>
+<blockquote>
+<p>观察上式我们可以思考：</p>
+<p>从第二层开始，当前层能否由上一层得来，由此，我们对式子进行变形：</p>
+<p>$[1,1]$</p>
+<p>$[1,1]+[2,2],[2,2]$</p>
+<p>$[1,2]+[3,3],[2,2]+[3,3],[3,3]$</p>
+<p>$[1,3]+[4,4],[2,3]+[4,4],[3,3]+[4,4],[4,4]$</p>
+</blockquote>
+<blockquote>
+<p>我们继续思考对每个元素计算k次方，当前层会比上一层多出什么：</p>
+<p>$([1,1])^k$</p>
+<p>$([1,1]+[2,2])^k,([2,2])^k$</p>
+<p>$([1,2]+[3,3])^k,([2,2]+[3,3])^k,([3,3])^k$</p>
+<p>$([1,3]+[4,4])^k,([2,3]+[4,4])^k,([3,3]+[4,4])^k,([4,4])^k$</p>
+</blockquote>
+<blockquote>
+<p>以第4层作为当前层(第4个元素结尾构成的子数组和有四种)：</p>
+<p>$[1,3]^k,[2,3]^k,[3,3]^k$</p>
+<p>$([1,3]+[4,4])^k,([2,3]+[4,4])^k,([3,3]+[4,4])^k,([4,4])^k$</p>
+<p>发现第四层比第三层多了一项[4,4]不好整体转移</p>
+<p>第4个元素结尾构成的子数组和的&#x3D;&#x3D;k次幂&#x3D;&#x3D;有四种：$[1,4]^k,[2,4]^k,[3,4]^k,[4,4]^k$</p>
+<p>我们先不看$[4,4]^k$</p>
+<p>以第4层作文当前层</p>
+<p>令上一层子数组和的&#x3D;&#x3D;k次幂&#x3D;&#x3D;的 <u>和为</u> $b1[k]$;</p>
+<p>令当前层子数组和的&#x3D;&#x3D;k次幂&#x3D;&#x3D;的 <u>和为</u> $b2[k]+[i,i]^k$;</p>
+</blockquote>
+<blockquote>
+<p>由二项式展开定理，我们可以得到：</p>
+</blockquote>
+<blockquote>
+<p>$b1[k]$</p>
+<p>$&#x3D; {(([1,3])^k+([2,3])^k+([3,3])^k)}$</p>
+</blockquote>
+<blockquote>
+<p>$b2[k]$</p>
+<p>$&#x3D;[1,4]^k+[2,4]^k+[3,4]^k$</p>
+<p>$&#x3D; {(([1,3]+[4,4])^k+([2,3]+[4,4])^k+([3,3]+[4,4])^k)}$</p>
+<p>$&#x3D;(\sum\binom{k}{j}([1,3]^j)<em>([4,4]^{k-j})+\sum\binom{k}{j}([2,3]^j)</em>([4,4]^{k-j})+\sum\binom{k}{j}([3,3]^j)*([4,4]^{k-j}))$</p>
+<p>$&#x3D;\sum\binom{k}{j}b1[j]*[4,4]^{k-j}$</p>
+<p>我们以i元素结尾的所有子数组和的k次幂的和作为状态：$dp[i][k]$</p>
+<p>状态转移方程可以写成如下：</p>
+<p>$dp[i][k]&#x3D;dp[i-1][k]+[i,i]^k$</p>
+</blockquote>
+<blockquote>
+<p>上一个引用块的第3步用到了二项式展开定理，因此在代码中体现为多了m这种循环</p>
+<p>$&#x3D;(\sum\binom{k}{j}([1,3]^j)<em>([4,4]^{k-j})+\sum\binom{k}{j}([2,3]^j)</em>([4,4]^{k-j})+\sum\binom{k}{j}([3,3]^j)*([4,4]^{k-j}))$</p>
+<p>这个式子意味着需要保留以第i个元素结尾的子数组和的1到k次幂的和的状态。</p>
+<p>具体如下：</p>
+<p>$[1,3]^0*[4,4]^2+[2,3]^0*[4,4]^2+[3,3]^0*[4,4]^2$</p>
+<p>$[1,3]^1*[4,4]^1+[2,3]^1*[4,4]^1+[3,3]^1*[4,4]^1$</p>
+<p>$[1,3]^2*[4,4]^0+[2,3]^2*[4,4]^0+[3,3]^2*[4,4]^0$</p>
+<p>也就是：</p>
+<p>$[1,3]^0+[2,3]^0+[3,3]^0$ 是被提前算出来的 b1[0]</p>
+<p>$[1,3]^1+[2,3]^1+[3,3]^1$ 是被提前算出来的 b1[1]</p>
+<p>$[1,3]^2+[2,3]^2+[3,3]^2$ 是被提前算出来的 b1[2]</p>
+<p>也就是以第三个元素结尾的子数组的和的1-2次幂 分别和 $[4,4]$的2-1次幂相乘</p>
+<p>也就是：</p>
+<p>$b1[j]$</p>
+<p>在代码中体现为：</p>
+<p>$dp[i-1][j]$</p>
+</blockquote>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; pii;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">2e5</span><span class="number">+10</span>,M=<span class="number">11</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="type">int</span> a[N],ap[N];</span><br><span class="line"><span class="type">int</span> c[M][M];</span><br><span class="line"><span class="type">int</span> dp[N][M];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> n,k=<span class="number">10</span>;</span><br><span class="line">  cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    cin&gt;&gt;a[i];</span><br><span class="line">    a[i]%=mod;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 预处理组合数</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=k;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=i;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(j==<span class="number">0</span>) c[i][j]=<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">else</span> c[i][j]=(c[i<span class="number">-1</span>][j]+c[i<span class="number">-1</span>][j<span class="number">-1</span>])%mod;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//res统计答案</span></span><br><span class="line">  <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="comment">// 每一层元素的幂次</span></span><br><span class="line">    ap[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=k;j++)&#123;</span><br><span class="line">      ap[j]=ap[j<span class="number">-1</span>]*a[i]%mod;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=k;j++)&#123;</span><br><span class="line">      <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> m=<span class="number">0</span>;m&lt;=j;m++)&#123;</span><br><span class="line">        <span class="type">int</span> x=c[j][m]%mod;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;x&lt;&lt;endl;</span></span><br><span class="line">        <span class="comment">// sum=(sum+c[j][m]*dp[i-1][m])%mod;</span></span><br><span class="line">        <span class="comment">// sum=(sum+ap[j-m])%mod;</span></span><br><span class="line">        x=(x*dp[i<span class="number">-1</span>][m])%mod;</span><br><span class="line">        x=(x*ap[j-m])%mod;</span><br><span class="line">        sum=(sum+x)%mod;</span><br><span class="line">      &#125;</span><br><span class="line">      dp[i][j]=(sum+ap[j])%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    res=(res+dp[i][k])%mod;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// for(int i=1;i&lt;=n;i++)&#123;</span></span><br><span class="line">  <span class="comment">//   for(int j=0;j&lt;=k;j++)&#123;</span></span><br><span class="line">  <span class="comment">//     cout&lt;&lt;dp[i][j]&lt;&lt;&#x27; &#x27;;</span></span><br><span class="line">  <span class="comment">//   &#125;</span></span><br><span class="line">  <span class="comment">//   cout&lt;&lt;endl;</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">  <span class="comment">// cout&lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">  cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
