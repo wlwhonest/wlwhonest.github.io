@@ -320,7 +320,7 @@
 <p>赛后发现，应当还要能够出 H, E 题</p>
 <p>做完已学知识能够完成的题目之后，应当要能够做的题目分别是 J——<code>nim</code>游戏</p>
 </blockquote>
-<h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><blockquote>
+<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><blockquote>
 <p>花了一个小时找规律。</p>
 <p>最后通过打表打了n=4,5,6,找出了规律，如果早点观察样例说不定就可以猜出答案了</p>
 </blockquote>
