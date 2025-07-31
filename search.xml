@@ -538,7 +538,7 @@
 <p><img lazyload="" src="/images/loading.svg" data-src="https://wlwtypora.oss-cn-shenzhen.aliyuncs.com/wlwtypora/202507241524285.png" alt="image-20250724152424236"></p>
 <p>rx</p>
 <p><img lazyload="" src="/images/loading.svg" data-src="https://wlwtypora.oss-cn-shenzhen.aliyuncs.com/wlwtypora/202507241526400.png" alt="image-20250724152630357"></p>
-<h3 id="2025-7-28"><a href="#2025-7-28" class="headerlink" title="2025.7.28"></a>2025.7.28</h3><blockquote>
+<h2 id="2025-7-28"><a href="#2025-7-28" class="headerlink" title="2025.7.28"></a>2025.7.28</h2><blockquote>
 <p>开发叙事：</p>
 <ol>
 <li>基于以上分析，重新校对ymodem.js发送数据块的内容，发现每个分区的第零个数据包地址这块少了0x（转成十六进制表示就是【0x30,-x78】）</li>
