@@ -562,4 +562,24 @@
         <tag>爬虫</tag>
       </tags>
   </entry>
+  <entry>
+    <title>快速定位react组件</title>
+    <url>/2026/02/11/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8Dreact%E7%BB%84%E4%BB%B6/</url>
+    <content><![CDATA[<blockquote>
+<p>react中快速定位组件的插件，windows同时按下 <code>Shift</code>和<code>Alt</code>，鼠标点击网页元素，在对应代码编辑器即可显示对应组件源码位置</p>
+</blockquote>
+<p>快速定位组件：插件<code>code-inspector-plugin</code></p>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">npm install code-inspector-plugin</span><br></pre></td></tr></table></figure></div>
+
+<p>如果是vite起的react项目则直接在<code>vite.config.ts</code>配置文件中配置如下</p>
+<div class="code-container" data-rel="Ts"><figure class="iseeu highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> { codeInspectorPlugin } <span class="keyword">from</span> <span class="string">'code-inspector-plugin'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vite.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>({</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="title function_">react</span>(),</span><br><span class="line">    <span class="title function_">codeInspectorPlugin</span>({</span><br><span class="line">      <span class="attr">bundler</span>: <span class="string">'vite'</span>,</span><br><span class="line">      <span class="attr">editor</span>: <span class="string">'cursor'</span>,      <span class="comment">// 关键配置：指定用 Cursor 打开</span></span><br><span class="line">    }),</span><br><span class="line">  ],</span><br><span class="line">})</span><br></pre></td></tr></table></figure></div>
+
+
+
+
+]]></content>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
 </search>
